@@ -3,18 +3,23 @@ package Financiamento;
 import java.util.*;
 
 public class Emprestimo {
-
+	
 	public static void main(String[] args) {
 		
-		Scanner emp = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
+		
+		InfoEmprestimo infoEmprestimo = new InfoEmprestimo();
 		
 		System.out.print("Valor: ");
-		double total = emp.nextDouble();
+		double valorEmprestimo = sc.nextDouble();
 		System.out.print("Taxa anual: ");
-		double taxa = emp.nextDouble();
+		double taxa = sc.nextDouble();
 		System.out.print("Tempo (anos): ");
-		int n = emp.nextInt();
+		int nTempo = sc.nextInt();
 		
+		double prestacao = InfoEmprestimo.prestacao(taxa, valorEmprestimo, nTempo);
+		System.out.println("\nPrestação: R$ " + prestacao);
+				
+		sc.close();
 	}
-
 }
